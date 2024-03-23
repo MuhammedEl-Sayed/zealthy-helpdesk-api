@@ -6,10 +6,9 @@ const router = express.Router();
 
 // Create a new ticket
 router.post('/tickets', async (req, res) => {
-	console.log(req.body);
-	const { title, from, status, description } = req.body;
+	const { title, name, email, status, description } = req.body;
 	try {
-		const ticket = new Ticket({ title, from, status, description });
+		const ticket = new Ticket({ title, name, email, status, description });
 		await ticket.save();
 		res.send(ticket);
 	} catch (error) {
