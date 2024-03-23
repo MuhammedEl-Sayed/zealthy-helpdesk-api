@@ -21,7 +21,6 @@ router.post('/tickets', async (req, res) => {
 router.get('/tickets', async (req, res) => {
 	try {
 		const tickets = await Ticket.find({});
-		console.log(tickets);
 		res.send(tickets);
 	} catch (error) {
 		console.error(error);
